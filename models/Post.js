@@ -18,11 +18,11 @@ Post.init(
             allowNull: false,
         },
         //post description (mini project let "project" description to have NULL case, implies can make posts with empty descriptions)
-        description: {
+        post_description: {
             type: DataTypes.STRING,
         },
         //date created
-        date_created: {
+        post_dateCreated: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
