@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require("../../models");
 
-//creating user data and session
+//create new user
 router.post("/", async (req, res) => {
     try{
         const userData = await User.create(req.body);
@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
     }
 })
 
+// login
 router.post("./login", async (req, res) => {
     try {
         const userData = User.findOne({ where: { email: req.body.email }});
@@ -41,5 +42,20 @@ router.post("./login", async (req, res) => {
 
             res.json({ user: userData, message: 'You are now logged in!' });
         })
+    }catch(err) {
+        res.status(400).json(err); // 500 used in other activities, 400 used in mini project
     }
-})
+});
+
+// logout
+router.post("./logout", (req, res) => {
+    if(req.session.logged_in) {
+        res.session.destroy(() => { //destroy session
+            res.status(204).end(); //204 = no content
+        });
+    } else {
+        res.status(404).end(); //404 = content not found
+    }
+});
+
+module.exports = router;
