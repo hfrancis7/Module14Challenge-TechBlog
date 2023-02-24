@@ -1,0 +1,32 @@
+header, main{
+    border: 2px solid red;
+}
+
+li{
+    list-style: none;
+}
+
+.nav-list{
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-list-items{
+    padding: 10px;
+    
+}
+
+.post-card{
+    border: 2px solid purple;
+    margin: 20px;
+}
+
+.post-header{
+    border: 2px solid slateblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
