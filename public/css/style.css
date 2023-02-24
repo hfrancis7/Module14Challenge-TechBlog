@@ -30,3 +30,12 @@ li{
     justify-content: space-between;
     padding: 10px;
 }
+
+.form-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input{
+    margin: 5px;
+}
