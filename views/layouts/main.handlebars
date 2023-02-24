@@ -12,13 +12,13 @@
         <header>
             <nav>
                 <ul class="nav-list">
-                    <li class="nav-list-items"><a href="#">Home</a></li>
+                    <li class="nav-list-items"><a href="/">Home</a></li>
                     <li class="nav-list-items"><a href="#">Dashboard</a></li>
                     <!--Conditionally render login/logout links-->
                     {{#if logged_in}}
-                    <li class="nav-list-items"><a href="/login">Login</a></li>
-                    {{#else}}
                     <li class="nav-list-items"><a href="#">Logout</a></li>
+                    {{else}}
+                    <li class="nav-list-items"><a href="/login">Login</a></li>
                     {{/if}}
                 </ul>
             </nav>

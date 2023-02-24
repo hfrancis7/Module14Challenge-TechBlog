@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Project, User } = require("../models");
+const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 /**
- * Route to display projects on homepage
+ * Route to display posts on homepage
  */
 router.get("/", async (req, res) => {
     try{
@@ -29,6 +29,20 @@ router.get("/", async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+/**
+ * Redirect to login from homepage
+ */
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    //this shouldn't be an issue b/c the login button should disappear, keeping in just in case
+    if (req.session.logged_in) {
+      res.redirect('/profile'); //this would likely become dashboard? do I need a dashboard route? this challenge is kicking my ass
+      return;
+    }
+  
+    res.render('login');
+  });
 
 module.exports = router;
 

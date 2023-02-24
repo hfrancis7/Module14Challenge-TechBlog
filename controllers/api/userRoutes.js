@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
 })
 
 // login
-router.post("./login", async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const userData = User.findOne({ where: { email: req.body.email }});
 
@@ -48,7 +48,7 @@ router.post("./login", async (req, res) => {
 });
 
 // logout
-router.post("./logout", (req, res) => {
+router.post("/logout", (req, res) => {
     if(req.session.logged_in) {
         res.session.destroy(() => { //destroy session
             res.status(204).end(); //204 = no content
