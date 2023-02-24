@@ -51,11 +51,27 @@ router.get("/signup", (req, res) => {
       }
     
     res.render('signup');
-})
+});
 
-router.get("/dashboard", (req, res) => {
-    
-})
+//dashboard should get all of the post data based on the logged_in user id
+router.get("/dashboard", withAuth, async (req, res) => {
+    try{
+        const postData = Post.findAll({
+            where: {
+                user_id: req.session.user_id, //I think this gets the user_id that's saved in the db?
+            },
+        });
+
+        const posts = postData.get({plain: true});
+
+        res.render("dashboard", {
+            ...posts,
+            logged_in: true
+        });
+    } catch(err){
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
 
