@@ -37,12 +37,25 @@ router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     //this shouldn't be an issue b/c the login button should disappear, keeping in just in case
     if (req.session.logged_in) {
-      res.redirect('/profile'); //this would likely become dashboard? do I need a dashboard route? this challenge is kicking my ass
+      res.redirect('/profile'); //this would likely become dashboard?
       return;
     }
   
     res.render('login');
   });
+
+router.get("/signup", (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/profile'); //this would likely become dashboard?
+        return;
+      }
+    
+    res.render('signup');
+})
+
+router.get("/dashboard", (req, res) => {
+    
+})
 
 module.exports = router;
 
