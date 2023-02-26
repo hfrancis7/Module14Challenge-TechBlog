@@ -34,10 +34,8 @@ router.get("/", async (req, res) => {
  * Redirect to login from homepage
  */
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    //this shouldn't be an issue b/c the login button should disappear, keeping in just in case
     if (req.session.logged_in) {
-      res.redirect('/profile'); //this would likely become dashboard?
+      res.redirect('/dashboard');
       return;
     }
   
@@ -46,7 +44,7 @@ router.get('/login', (req, res) => {
 
 router.get("/signup", (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/profile'); //this would likely become dashboard?
+        res.redirect('/dashboard'); 
         return;
       }
     
@@ -76,7 +74,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 //render a post
 //TODO: re add withAuth after testing done
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
       const postData = await Post.findByPk(req.params.id, {
         include: [

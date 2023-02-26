@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
   
       req.session.save(() => {
         req.session.user_id = userData.id;
-        req.session.loggedIn = true;
+        req.session.logged_in = true;
   
         res.status(200).json({ user: userData, message: 'You are now logged in!' });
       });
@@ -57,12 +57,12 @@ router.post('/login', async (req, res) => {
 
 // logout
 router.post("/logout", (req, res) => {
-    if(req.session.logged_in) {
-        res.session.destroy(() => { //destroy session
-            res.status(204).end(); //204 = no content
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
         });
     } else {
-        res.status(404).end(); //404 = content not found
+        res.status(404).end();
     }
 });
 

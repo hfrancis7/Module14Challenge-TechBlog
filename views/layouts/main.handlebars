@@ -16,7 +16,7 @@
                     <li class="nav-list-items"><a href="/dashboard">Dashboard</a></li>
                     <!--Conditionally render login/logout links-->
                     {{#if logged_in}}
-                    <li class="nav-list-items"><a href="#">Logout</a></li>
+                    <button class="no-button" id="logout">Log Out</button>
                     {{else}}
                     <li class="nav-list-items"><a href="/login">Login</a></li>
                     {{/if}}
@@ -30,9 +30,9 @@
            {{{body}}}
         </main>
 
-        <!-- {{#if logged_in}}
-            <script src="/js/logout.js"></script>
-            {{/if}} -->
+        {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
     </body>
 
 </html>

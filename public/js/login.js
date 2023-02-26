@@ -7,17 +7,15 @@ const loginFormHandler = async (event) => {
 
     if(email && password) {
         //send a POST request to the API endpoint
-        const response = await fetch('/api/user/login', {
-            method: 'POST',
-            body: JSON.stringify({email, password}),
-            headers: { 'Content-type': 'application/json'},
+        const response = await fetch("api/user/login", {
+            method: "POST",
+            body: JSON.stringify({ email, password}),
+            headers: { "Content-Type": "application/json"},
         });
-        console.log(response);
 
-        if(response.ok) {
-            //If successful, redirect browser to dashboard(?)
+        if(response.ok){
             document.location.replace("/dashboard");
-        }else {
+        }else{
             alert(response.statusText);
         }
     }
@@ -47,6 +45,7 @@ const signupFormHandler = async (event) => {
 
 var loginForm = document.querySelector(".login-form");
 var signUpForm = document.querySelector(".signup-form");
+
 if(loginForm){
     loginForm.addEventListener("submit", loginFormHandler);
 }
