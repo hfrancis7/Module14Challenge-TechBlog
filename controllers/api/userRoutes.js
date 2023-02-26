@@ -3,49 +3,57 @@ const { User } = require("../../models");
 
 //create new user
 router.post("/", async (req, res) => {
+    console.log(req.body);
     try{
-        const userData = await User.create(req.body);
+        const userData = await User.create({
+            name: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+          });
+        console.log(userData);
         req.session.save(() => {
-            //may need to use name/email and password? see activity 9
-            //i also can't find anything with the secrets???
             req.session.user_id = userData.id; //session userid = user's id
             req.session.logged_in = true; //user is logged in
 
             res.status(200).json(userData);
         });
     } catch(err) {
+        console.log(err);
         res.status(400).json(err); //status 400 = bad request
     }
 })
 
 // login
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
-        const userData = User.findOne({ where: { email: req.body.email }});
-
-        if(!userData) {
-            res.status(400).json({ message: 'Incorrect email or password, please try again!' }) //status 400 = bad request
-            return; //if there is not a user with this email, err
-        }
-
-        const validPassword = await userData.checkPassword(req.body.password);
-
-        if(!validPassword) {
-            res.status(400).json({ message: 'Incorrect email or password, please try again!' }) //status 400 = bad request
-            return; //if password invalid, err
-        }
-
-        //create new session, user is logged in
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-
-            res.json({ user: userData, message: 'You are now logged in!' });
-        })
-    }catch(err) {
-        res.status(400).json(err); // 500 used in other activities, 400 used in mini project
+      const userData = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      });
+      if (!userData) {
+        res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      const validPassword = await userData.checkPassword(req.body.password);
+  
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.loggedIn = true;
+  
+        res.status(200).json({ user: userData, message: 'You are now logged in!' });
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
     }
-});
+  });
 
 // logout
 router.post("/logout", (req, res) => {

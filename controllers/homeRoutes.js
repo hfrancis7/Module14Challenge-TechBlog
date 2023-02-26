@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
  * Route to display posts on homepage
  */
 router.get("/", async (req, res) => {
-    try{
+  try{
         //get all posts and JOIN with user data
         const postData = await Post.findAll({
             include: [
@@ -56,19 +56,20 @@ router.get("/signup", (req, res) => {
 //dashboard should get all of the post data based on the logged_in user id
 router.get("/dashboard", withAuth, async (req, res) => {
     try{
-        const postData = Post.findAll({
+        const postData = await Post.findAll({
             where: {
                 user_id: req.session.user_id, //I think this gets the user_id that's saved in the db?
             },
         });
 
-        const posts = postData.get({plain: true});
+        const posts = postData.map((post) => post.get({plain: true}));
 
         res.render("dashboard", {
-            ...posts,
+            posts,
             logged_in: true
         });
     } catch(err){
+        console.log(err);
         res.status(500).json(err);
     }
 });

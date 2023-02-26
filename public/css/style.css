@@ -40,7 +40,9 @@ li{
     margin: 5px;
 }
 
-.flex-center{
+.dashboard-flex{
     display: flex;
+    text-align: center;
     justify-content: center;
+    flex-direction: column;
 }
