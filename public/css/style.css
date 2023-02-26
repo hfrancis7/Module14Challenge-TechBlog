@@ -39,3 +39,8 @@ li{
 .form-input{
     margin: 5px;
 }
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
