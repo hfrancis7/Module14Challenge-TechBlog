@@ -1,6 +1,7 @@
 :root{
-    --darkgreen: #68a055;
+    --tristangreen: #68a055;
     --sage: #a7b688;
+    --aniblue: #a7bffd;
 }
 
 /* differentiating header and main boxes */
@@ -22,7 +23,7 @@ a:hover{
 
 /* color the entire background of the header */
 header, header > *, .nav-list, .nav-list > * , .nav-list-items > * {
-    background-color: var(--darkgreen);
+    background-color: var(--tristangreen);
 }
 
 /*remove styling from li */
@@ -111,6 +112,8 @@ li{
 /* form input */
 .form-input{
     margin: 5px;
+    background-color: whitesmoke;
+    padding: 5px;
 }
 
 /*dashboard Flex */
@@ -140,9 +143,19 @@ li{
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: white;
     text-decoration: none;
-    font-size: 100%;
+    padding-left: 7px;
+  }
+
+  .no-button:hover{
+    color: lightgray;
+    text-shadow: 2px 2px gray;
+  }
+
+  /* for filling in the backgrounds on login and sign-up screens */
+  .login-fill{
+    background-color: lightgray;
   }
 
   /*flex for comment input */
@@ -156,3 +169,39 @@ li{
     display: flex;
     justify-content: center;
   }
+
+  .btn-style{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--aniblue);
+    border: 2px solid cornflowerblue;
+    color: white;
+    font-weight: bold;
+  }
+
+.btn-style:hover{
+    background-color:cornflowerblue;
+    border: 2px solid var(--aniblue);
+    box-shadow: 0px 0px 5px 5px white; 
+}
+
+.input-background{
+    background-color: white;
+}
+
+.delete-btn-style{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightcoral;
+    border: 2px solid red;
+    color: white;
+    font-weight: bold;
+}
+
+.delete-btn-style:hover{
+    background-color:red;
+    border: 2px solid lightcoral;
+    box-shadow: 0px 0px 5px 5px white; 
+}

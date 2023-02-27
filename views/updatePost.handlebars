@@ -2,22 +2,22 @@
     <div class="post-header">
         <h2>Update Post</h2>
     </div>
-    <form method="post" class="updatePost-form">
+    <form method="post" class="updatePost-form post-description-style">
         <div class="form-flex">
-            <div class="">
-                <label for="post-title-input">Title: </label>
-                <input class="form-input" type="text" id="post-title-input" value="{{title}}">
-            </div>
-            <div class="">
-                <label for="post-description-input">Description: </label>
-                <input class="form-input" type="text" id="post-description-input" value="{{post_description}}">
-            </div>
-            <div class="">
-                <button class="" id="updatePost-btn" type="submit" value="Update">Update</button>
+            <label for="post-title-input" class="login-fill">Title: </label>
+            <input class="form-input" type="text" id="post-title-input" value="{{title}}">
+            
+            <label for="post-description-input" class="login-fill">Description: </label>
+            <textarea class="form-input" type="text" rows="20" id="post-description-input" >{{post_description}}</textarea>
+
+            <div class="login-fill">
+                <button class="btn-style" id="updatePost-btn" type="submit" value="Update">Update</button>
             </div>
         </div>
     </form>
-    <button class="" id="deletePost-btn" onclick="deletePost();" value="Delete">Delete</button>
+    <div class="flex-center-comment-btn">
+        <button class="delete-btn-style" id="deletePost-btn" onclick="deletePost();" value="Delete">Delete</button>
+    </div>
 </section>
 
 <script src="/js/post.js"></script>
