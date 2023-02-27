@@ -59,12 +59,15 @@ router.get("/dashboard", withAuth, async (req, res) => {
                 user_id: req.session.user_id, //I think this gets the user_id that's saved in the db?
             },
         });
+        const userData = await User.findByPk(req.session.user_id);
 
         const posts = postData.map((post) => post.get({plain: true}));
+        const user = userData.get({plain: true});
 
         res.render("dashboard", {
             posts,
-            logged_in: true
+            user,
+            logged_in: req.session.logged_in,
         });
     } catch(err){
         console.log(err);
@@ -73,7 +76,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
 });
 
 //render a post
-//TODO: re add withAuth after testing done
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
       const postData = await Post.findByPk(req.params.id, {
@@ -95,6 +97,16 @@ router.get('/post/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+//render createPost
+router.get("/createPost", withAuth, async (req, res) => {
+  if (req.session.logged_in) {
+    res.render("newPost", {
+      logged_in: req.session.logged_in,
+    });
+    return;
+  }
+});
 
 module.exports = router;
 

@@ -1,9 +1,10 @@
 <div class="dashboard-flex">
-    <h1>Your Dashboard</h1>
+    <h1>Hello, {{user.name}}!</h1>
+    <h2>Your Dashboard</h2>
     <ul>
         {{#each posts as |post|}}
-        <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+        <li><a href="/post/{{post.id}}">{{post.title}}</a></li>
         {{/each}}
     </ul>
-    <button>Create Post</button>
+    <a href="/createPost">Create Post</button>
 </div>
