@@ -3,7 +3,9 @@
         <h2>{{title}}</h2>
         <p>Posted by {{user.name}} on {{format_date post_dateCreated}}</p>
     </div>
-    <p>{{post_description}}</p>
+    <div class="post-description-style">
+        <p>{{post_description}}</p>
+    </div>
 </section>
 
 {{#each comments as |comment|}}
@@ -11,7 +13,9 @@
     <div class="post-header">
         <p>{{comment.user.name}} ({{format_date comment.comment_dateCreated}})</p>
     </div>
-    <p>{{comment.comment_description}}</p>
+    <div class="post-description-style">
+        <p>{{comment.comment_description}}</p>
+    </div>
 </section>
 {{/each }}
 
@@ -28,3 +32,5 @@
         </div>
     </form>
 </section>
+
+<script src="/js/comment.js"></script>

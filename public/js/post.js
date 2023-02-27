@@ -73,5 +73,4 @@ async function deletePost(){
     }else{
         alert(response.statusText);
     }
-    
 }

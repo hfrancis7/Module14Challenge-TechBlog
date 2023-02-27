@@ -1,6 +1,28 @@
+:root{
+    --darkgreen: #68a055;
+    --sage: #a7b688;
+}
+
 /* differentiating header and main boxes */
-header, main{
-    border: 2px solid red;
+*{
+    background-color: var(--sage);
+}
+
+/* by default, all anchor tags white with no text decoration */
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/* by default, all anchor tags change to light gray on hover */
+a:hover{
+    color: lightgray;
+    text-shadow: 2px 2px gray;
+}
+
+/* color the entire background of the header */
+header, header > *, .nav-list, .nav-list > * , .nav-list-items > * {
+    background-color: var(--darkgreen);
 }
 
 /*remove styling from li */
@@ -10,7 +32,6 @@ li{
 
 /*nav bar */
 .nav-list{
-    border: 2px solid green;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,26 +45,61 @@ li{
 
 /*cards to hold content */
 .post-card{
-    border: 2px solid purple;
     margin: 20px;
+}
+
+/* make sure styling applies to everything in bottom of card */
+.post-description-style > * {
+    background-color: lightgray;
+    padding: 20px;
+    line-height: 1.5;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /*header for posts*/
 .post-header{
-    border: 2px solid slateblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: darkslategray;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
 }
 
+/* children of post header (mainly text) */
+.post-header > *{
+    background-color: darkslategray;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-shadow: 2px 2px gray;
+}
+
+/* color the background of the post-header title links */
+.post-header > * > * {
+    background-color: darkslategray;
+}
+
 /*header for adding comment */
 .comment-header{
-    border: 2px solid slateblue;
+    background-color: darkslategray;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 10px;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+/* children of comment header (mainly text) */
+.comment-header > * {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: darkslategray;
+    text-shadow: 2px 2px gray;
+    font-size: 25px;
 }
 
 /* flex for form layout */
@@ -65,6 +121,19 @@ li{
     flex-direction: column;
 }
 
+/*tech blog logo*/
+.tech-blog-logo{
+    font-family: "OCR A Std","Lucida Console", "Courier New", monospace;
+    display: inline-block;
+    background-color: darkslategray;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 36px;
+    color: white;
+    text-shadow: 2px 2px gray;
+}
+
 /* turning logout button into not a button */
 .no-button {
     background: none;
@@ -76,11 +145,13 @@ li{
     font-size: 100%;
   }
 
+  /*flex for comment input */
   .flex-comment-input{
     display: flex;
     justify-content: center;
   }
 
+  /*flex for centering comment button */
   .flex-center-comment-btn{
     display: flex;
     justify-content: center;
