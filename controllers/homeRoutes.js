@@ -99,9 +99,28 @@ router.get('/post/:id', withAuth, async (req, res) => {
   });
 
 //render createPost
-router.get("/createPost", withAuth, async (req, res) => {
+router.get("/createPost", withAuth, (req, res) => {
   res.render("newPost");
 });
+
+//render updatePost
+router.get("/updatePost/:id", withAuth, async (req, res) => {
+  try{
+    const postData = await Post.findByPk(req.params.id);
+    if(!postData){
+      res.status(404).json({message: "No posts with this id number!"});
+      return;
+    }
+    const post = postData.get({ plain: true });
+    res.render("updatePost", {
+      ...post,
+      logged_in: req.session.logged_in
+    })
+  } catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
 

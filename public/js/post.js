@@ -20,5 +20,38 @@ const createPostFormHandler = async (event) => {
     }
 }
 
+const updatePostFormHandler = async (event) => {
+    event.preventDefault();
+
+    const newTitle = document.querySelector("#post-title-input").value.trim();
+    const newDescription = document.querySelector("#post-description-input").value.trim();
+    const parsehttp = (document.location.href).split("/");
+    const id = parsehttp[parsehttp.length - 1];
+    const fetchPath = "../api/post/" + id;
+
+    if(newTitle && newDescription){
+        const response = await fetch(fetchPath, {
+            method: "PUT",
+            params: JSON.stringify({id}),
+            body: JSON.stringify({newTitle, newDescription}),
+            headers: {"Content-Type": "application/json"},
+        });
+
+        if(response.ok){
+            document.location.replace("/dashboard");
+        }else{
+            alert(response.statusText);
+        }
+    }
+}
+
+const updatePostForm = document.querySelector(".updatePost-form")
 const newPostForm = document.querySelector(".newPost-form")
-newPostForm.addEventListener("submit", createPostFormHandler);
+
+if(newPostForm){
+    newPostForm.addEventListener("submit", createPostFormHandler);
+}
+
+if(updatePostForm){
+    updatePostForm.addEventListener("submit", updatePostFormHandler);
+}

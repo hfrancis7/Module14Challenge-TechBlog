@@ -38,4 +38,21 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
 });
 
+//edit a post
+router.put("/:id", withAuth, async (req, res) => {
+    try{
+        const updatedPost = {title: req.body.newTitle, post_description: req.body.newDescription};
+        const postData = await Post.update(updatedPost, {
+            where: {
+                id: req.params.id,
+            }
+        })
+        console.log(postData);
+        res.status(200).json(postData);
+    }catch(err){
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
