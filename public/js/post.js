@@ -6,7 +6,7 @@ const createPostFormHandler = async (event) => {
 
     if(title && description) {
         //send a POST request to the API endpoint
-        const response = await fetch("api/user/login", {
+        const response = await fetch("api/post", {
             method: "POST",
             body: JSON.stringify({ title, description}),
             headers: { "Content-Type": "application/json"},

@@ -100,12 +100,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
 //render createPost
 router.get("/createPost", withAuth, async (req, res) => {
-  if (req.session.logged_in) {
-    res.render("newPost", {
-      logged_in: req.session.logged_in,
-    });
-    return;
-  }
+  res.render("newPost");
 });
 
 module.exports = router;
