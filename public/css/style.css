@@ -1,11 +1,14 @@
+/* differentiating header and main boxes */
 header, main{
     border: 2px solid red;
 }
 
+/*remove styling from li */
 li{
     list-style: none;
 }
 
+/*nav bar */
 .nav-list{
     border: 2px solid green;
     display: flex;
@@ -13,16 +16,19 @@ li{
     justify-content: center;
 }
 
+/*nav bar items */
 .nav-list-items{
     padding: 10px;
     
 }
 
+/*cards to hold content */
 .post-card{
     border: 2px solid purple;
     margin: 20px;
 }
 
+/*header for posts*/
 .post-header{
     border: 2px solid slateblue;
     display: flex;
@@ -31,15 +37,27 @@ li{
     padding: 10px;
 }
 
+/*header for adding comment */
+.comment-header{
+    border: 2px solid slateblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* flex for form layout */
 .form-flex{
     display: flex;
     flex-direction: column;
 }
 
+/* form input */
 .form-input{
     margin: 5px;
 }
 
+/*dashboard Flex */
 .dashboard-flex{
     display: flex;
     text-align: center;
@@ -47,6 +65,7 @@ li{
     flex-direction: column;
 }
 
+/* turning logout button into not a button */
 .no-button {
     background: none;
     border: none;
@@ -55,4 +74,14 @@ li{
     color: #1b89bc;
     text-decoration: none;
     font-size: 100%;
+  }
+
+  .flex-comment-input{
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-center-comment-btn{
+    display: flex;
+    justify-content: center;
   }

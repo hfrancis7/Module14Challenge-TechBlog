@@ -6,16 +6,25 @@
     <p>{{post_description}}</p>
 </section>
 
-{{!-- {{#each comments as |comment|}}
+{{#each comments as |comment|}}
 <section class="post-card">
     <div class="post-header">
-        <h2> </h2>
-        <p>Posted by {{}} on {{}}</p>
+        <p>{{comment.user.name}} ({{format_date comment.comment_dateCreated}})</p>
     </div>
-    <p>{{}}</p>
+    <p>{{comment.comment_description}}</p>
 </section>
-{{/each }} --}}
+{{/each }}
 
-<div class="flex-center">
-    <button> Add Comment </button>
-</div>
+<section class="post-card">
+    <div class="comment-header">
+        <h2>Add Comment</h2>
+    </div>
+    <form class="createComment-form">
+        <div class="flex-comment-input">
+                <input class="form-input" type="text" id="create-comment-input">
+        </div>
+        <div class="flex-center-comment-btn">
+            <button>Comment</button>
+        </div>
+    </form>
+</section>
