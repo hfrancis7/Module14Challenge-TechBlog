@@ -34,20 +34,22 @@
   - To log in:
     - Press the "Log In" link in the nav bar
     - Enter your Email and Password you used to make your account.
+    ![Login Screenshot](/screenshots/loginScreenshot.jpg?raw=true "login screenshot")
   - To Create a Post:
     - Go to the "Dashboard" section by clicking the "Dashboard" Link
     - Click the "Create Post" Link at the bottom of the dashboard
     - Fill out the "Title" and "Description fields of what you want your post to be.
     - Click the "Create" button to create your post.
+    ![Create Screenshot](/screenshots/createPostScreenshot.jpg?raw=true "create screenshot")
   - To Update/Delete a Post:
     - Go to your "Dashboard" and click an existing post.
         - To update your posts, fill out your Title and Description Fields for whatever you want your post to be, and then click "Update"
         - To delete a post, click the "Delete" button below the Update Post card.
+    ![update Screenshot](/screenshots/updatePostScreenshot.jpg?raw=true "update screenshot")
   - To Add a Comment:
     - From the Homepage, click the title of a post. This will direct you to the posts page where you can make comments.
     - Fill out the field in "Add Comment" with whatever you want your comment to be, and then click "Comment" to post it.
-
-    Make account, make post, make comment, update comment, update post
+    ![Post Screenshot](/screenshots/postScreenshot.jpg?raw=true "Post screenshot")
   
   ## Deployed App
 
