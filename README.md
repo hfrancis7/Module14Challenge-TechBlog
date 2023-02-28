@@ -1,4 +1,4 @@
-# Module 14 - Tech Blog
+# Module 14 Challenge - Tech Blog
   ![License:MIT License](https://img.shields.io/badge/License-MIT-yellow.svg) 
 
   ## Description
@@ -54,7 +54,7 @@
   https://haileyf-techblog-app.herokuapp.com/
 
   ## License
-  This project is covered by the following license: 
+  This project is covered by the following license: <br>
   [MIT License](https://choosealicense.com/licenses/mit/)
 
   ## Notes for Future Development
@@ -73,5 +73,5 @@
   
   If you have any questions about this project, here's how to contact me:
   
-  Github: https://github.com/hfrancis7
+  Github: https://github.com/hfrancis7 <br>
   Email: hfran7@yahoo.com
