@@ -4,15 +4,19 @@
     "post_description": "I've been trying to find documentation on handlebars.js, but it's super hard! Is this really what people are using to render their websites that run on servers?"
   },
   {
-    "title": "The Ultimate Tech Quiz",
-    "post_description": "I'm working on a web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+    "title": "This is how I set up my Routes",
+    "post_description": "Having your API routes all in one folder and then having one or more homeRoutes to render your page is the way to go!"
   },
   {
-    "title": "Roll 'Em Up",
-    "post_description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    "title": "Rimworld Modding",
+    "post_description": "I wanna start playing Rimworld, and I know that game has a lot of mods... How did you modders learn how to make that stuff? It's so cool!"
   },
   {
     "title": "What should I do next?",
     "post_description": "I'm having a major creative block... How do you guys get inspiration for what to work on?"
+  },
+  {
+    "title": "UCF Coding Bootcamp rocks!",
+    "post_description": "I've learned so much! I even made a cool blog where I can have my friends create accounts and make posts about interesting content!"
   }
 ]

@@ -205,3 +205,41 @@ li{
     border: 2px solid lightcoral;
     box-shadow: 0px 0px 5px 5px white; 
 }
+
+.your-dashboard{
+    color: black;
+    text-shadow: 2px 2px gray;
+    font-size: 30px;
+}
+
+.dash-container{
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: lightgray;
+    border: 5px dashed gray;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px gray;
+}
+
+.dashboard-link{
+    background-color: var(--aniblue);
+    padding: 10px;
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+}
+
+.dashboard-link:hover{
+    background-color: cornflowerblue;
+    border: 2px solid var(--aniblue);
+    box-shadow: 0px 0px 5px 5px white; 
+}
+
+.dash-fill{
+    background-color: lightgray;
+    padding: 20px;
+}
+
+
