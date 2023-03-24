@@ -19,6 +19,7 @@
   - [Deployed App](#deployed-app)
   - [License](#license)
   - [Notes for Future Develeopment](#notes-for-future-development)
+  - [Technologies Used](#technologies-used)
   - [Questions](#questions)
   
   ## Installation
@@ -70,6 +71,13 @@
     - The comment seeds do not generate due to the seeds trying to run asynchronously from when the posts are created. This can likely be fixed with another seeds.js to run after the initial one to create users and posts, but running the seed.js file twice will also work fine. Doesn't necessarily matter for the project itself besides simulating the website in a local environment.
  - Mistakes in User Input:
     - Currently, if the user inputs an incorrect username or password it will return "Bad Reqest" in the alert window with no information about the error. However, the json messages for these errors exist within their related routes, it's just a matter of getting these messages to display. In the future, this will be fixed, but for the sake of getting an initial submission, I am submitting this assignment with this issue still present.
+  
+  ## Technologies Used
+  - [Express JS](http://expressjs.com/)
+  - [Sequelize](https://sequelize.org/)
+  - [bcrypt](https://www.npmjs.com/package/bcrypt)
+  - [dotenv](https://www.npmjs.com/package/dotenv)
+  - [Handlebars](https://handlebarsjs.com/)
   
   ## Questions
   
